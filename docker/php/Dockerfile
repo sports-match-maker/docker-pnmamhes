@@ -1,4 +1,4 @@
-FROM php:8.2-fpm
+FROM php:8.1-fpm
 
 USER root
 
@@ -28,11 +28,25 @@ RUN apt-get update && apt-get install -y \
     webp \
     && docker-php-ext-configure gd \
     && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install gd \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install zip \
     && docker-php-ext-install soap \
     && docker-php-source delete
+
+# Codeigniter required
+RUN apt-get -y update \
+    && apt-get install -y libicu-dev \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install intl
+
+# Yii mamcache
+RUN apt-get install -y libz-dev libmemcached-dev && \
+apt-get install -y memcached libmemcached-tools && \
+pecl install memcached && \
+docker-php-ext-enable memcached   
+
 
 # Install Postgre PDO
 RUN apt-get install -y libpq-dev \

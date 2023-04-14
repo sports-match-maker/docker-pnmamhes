@@ -3,13 +3,16 @@ version: '3.1'
 services:
 
   php-fpm:
-    container_name: php8.2
+    container_name: php
     build:
       context: .
       dockerfile: docker/php/Dockerfile
     volumes:
-      - ./src/project:/var/www/html/project
-      - ./src/project1:/var/www/html/project1
+      - ./src/laravel:/var/www/html/laravel
+      - ./src/symfony:/var/www/html/symfony
+      - ./src/codeigniter:/var/www/html/codeigniter
+      - ./src/slim:/var/www/html/slim
+      - ./src/yii:/var/www/html/yii
     networks:
       - docker-pnmamhes
 
@@ -19,9 +22,15 @@ services:
     ports:
       - '80:80'
       - '81:81'
+      - '82:82'
+      - '83:83'
+      - '84:84'
     volumes:
-      - ./src/project:/var/www/html/project 
-      - ./src/project1:/var/www/html/project1
+      - ./src/laravel:/var/www/html/laravel 
+      - ./src/symfony:/var/www/html/symfony
+      - ./src/codeigniter:/var/www/html/codeigniter
+      - ./src/slim:/var/www/html/slim
+      - ./src/yii:/var/www/html/yii
       - ./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
     networks:
       - docker-pnmamhes
@@ -109,9 +118,6 @@ services:
       - 9200:9200
     networks:
       - docker-pnmamhes
-
-env_file:
-     - .env
 
 networks:
   docker-pnmamhes:
