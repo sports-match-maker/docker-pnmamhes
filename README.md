@@ -23,6 +23,26 @@ Is reusable docker dev-box for multiple frameworks in PHP Tehnology.
 - [Codeigniter](https://codeigniter.com/)
 - [Yii](https://www.yiiframework.com/)
 
+# Repository skeleton
+
+```
+.
+├── LICENSE
+├── README.md
+├── docker
+│   ├── db    ---> database init sql script
+│   ├── nginx ---> nginx server config file for new project
+│   ├── php   ---> edit php versions and packages/extensions
+│   └── redis ---> redis local beck up
+├── docker-compose.yaml ---> edit volumes, ports, etc.
+└── src                 ---> put your new projects
+    ├── codeigniter     ---> supported framework
+    ├── laravel         ---> supported framework
+    ├── slim            ---> supported framework
+    ├── symfony         ---> supported framework
+    └── yii             ---> supported framework
+
+```
 
 # Extensibility and Reusabillity
 
