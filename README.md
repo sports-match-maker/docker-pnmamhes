@@ -1,9 +1,9 @@
 # Docker-PNMAMHES
-Is reusable docker dev-box for multiple frameworks in PHP Tehnology.
+Is a reusable docker dev-box for multiple frameworks in PHP technology.
 
-![My Remote Image](https://i.ibb.co/tsJjFfJ/Screenshot-at-Apr-14-13-23-50.png)
+[Preview Link](https://i.ibb.co/tsJjFfJ/Screenshot-at-Apr-14-13-23-50.png)
 
-# Dev-box tehnology stack
+# Dev-box technology stack
 - `PHP 8.1`
 - `MySql`
 - `Redis`
@@ -15,7 +15,7 @@ Is reusable docker dev-box for multiple frameworks in PHP Tehnology.
 
 
 # Supported frameworks
-*Note: Cureenlty all frameworks support `PHP8.1`
+*Note: Currently all frameworks support `PHP8.1`
 
 - [Laravel](https://laravel.com/)
 - [Symfony](https://symfony.com/)
@@ -44,12 +44,12 @@ Is reusable docker dev-box for multiple frameworks in PHP Tehnology.
 
 ```
 
-# Extensibility and Reusabillity
+# Extensibility and Reusability
 
-It's totally up to you to make replasements
+It's totally up to you to make replacements
 - for example `MySQL` -> `PgSql` or `MongoDB` 
 - for example `MailPit` -> `MailHog`
-- even to make a clean up to suttesfly your needs.
+- even to make a clean-up to satisfy your needs.
 
 # PHP version upgrade
 
@@ -62,7 +62,7 @@ The change is trivial and is located [here](https://github.com/sports-match-make
  - Go to the default configuration for `Nginx` [here](https://github.com/sports-match-maker/docker-pnmamhes/blob/main/docker/nginx/conf.d/default.conf)
 and configure the servers as many projects as with you have in your repo.
  - Go to the `init.sql` configuration for databases [here](https://github.com/sports-match-maker/docker-pnmamhes/blob/main/docker/db/init.sql) and make the changes
- - Register the projects as following [here](https://github.com/sports-match-maker/docker-pnmamhes/blob/main/docker-compose.yaml)
+ - Register the projects as follows [here](https://github.com/sports-match-maker/docker-pnmamhes/blob/main/docker-compose.yaml)
  
 For example  
 
